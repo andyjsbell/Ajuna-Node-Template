@@ -22,8 +22,10 @@ use frame_support::pallet_prelude::*;
 pub use pallet::*;
 use sp_std::collections::btree_set::BTreeSet;
 
+mod games;
+
 #[cfg(test)]
-mod mock;
+pub mod mock;
 
 #[cfg(test)]
 mod tests;

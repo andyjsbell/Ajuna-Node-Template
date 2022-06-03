@@ -2366,6 +2366,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "dot4gravity"
+version = "0.1.0"
+source = "git+https://github.com/ajuna-network/ajuna-games?rev=4d1e5c9a889bd5ee6f01d1973b6177a57ac2672c#4d1e5c9a889bd5ee6f01d1973b6177a57ac2672c"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "rand 0.8.5",
+ "scale-info",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+]
+
+[[package]]
 name = "downcast-rs"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5480,6 +5496,7 @@ name = "pallet-ajuna-board"
 version = "0.1.0"
 dependencies = [
  "ajuna-common",
+ "dot4gravity",
  "frame-support",
  "frame-system",
  "parity-scale-codec",

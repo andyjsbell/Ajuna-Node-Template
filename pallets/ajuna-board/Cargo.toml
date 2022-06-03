@@ -21,6 +21,12 @@ frame-system  = { default-features = false, git = "https://github.com/paritytech
 sp-runtime    = { default-features = false, git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
 sp-std        = { default-features = false, git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
 
+# dot4gravity   = { default-features = false, git = "https://github.com/ajuna-network/ajuna-games", branch = "rmm/PLAT-251-implement-dot-4-gravity-logic" }
+dot4gravity   = { default-features = false, git = "https://github.com/ajuna-network/ajuna-games", rev = "4d1e5c9a889bd5ee6f01d1973b6177a57ac2672c" }
+
+sp-core = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
+sp-io   = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
+
 [dev-dependencies]
 sp-core = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
 sp-io   = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
