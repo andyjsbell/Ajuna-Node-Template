@@ -8,7 +8,6 @@ members = [
     "node/service",
     "rpc",
     "runtime/solo",
-    "runtime/bajun",
     "pallets/ajuna-matchmaker",
     "pallets/ajuna-gameregistry",
     "pallets/ajuna-connectfour",
