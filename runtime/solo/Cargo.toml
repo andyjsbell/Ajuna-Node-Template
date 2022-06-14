@@ -69,6 +69,7 @@ ajuna-primitives          = { default-features = false, path = "../../primitives
 pallet-ajuna-gameregistry = { default-features = false, path = "../../pallets/ajuna-gameregistry" }
 pallet-ajuna-matchmaker   = { default-features = false, path = "../../pallets/ajuna-matchmaker" }
 pallet-ajuna-runner       = { default-features = false, path = "../../pallets/ajuna-runner" }
+pallet-ajuna-board        = { default-features = false, path = "../../pallets/ajuna-board" }
 
 [features]
 default = [ "std" ]

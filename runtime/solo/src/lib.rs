@@ -71,10 +71,12 @@ use types::governance::*;
 // Some public reexports..
 pub use pallet_ajuna_gameregistry;
 pub use pallet_ajuna_matchmaker;
+pub use pallet_ajuna_board;
 pub use pallet_balances::Call as BalancesCall;
 pub use pallet_sidechain;
 pub use pallet_teerex;
 pub use pallet_timestamp::Call as TimestampCall;
+use pallet_ajuna_board::guessing::MockGame;
 
 impl_opaque_keys! {
 	pub struct SessionKeys {
@@ -492,6 +494,18 @@ impl pallet_ajuna_gameregistry::Config for Runtime {
 	type ShardIdentifier = H256;
 }
 
+parameter_types! {
+	pub const MaxNumberOfPlayers: u32 = 2;
+}
+impl pallet_ajuna_board::Config for Runtime {
+	type Event = Event;
+	type BoardId = GameId;
+	type PlayersTurn = pallet_ajuna_board::guessing::Guess;
+	type GameState = pallet_ajuna_board::guessing::GameState<AccountId>;
+	type Game = MockGame<AccountId>;
+	type MaxNumberOfPlayers = MaxNumberOfPlayers;
+}
+
 pub type ObserverInstance = pallet_membership::Instance1;
 impl pallet_membership::Config<ObserverInstance> for Runtime {
 	type Event = Event;
@@ -558,6 +572,7 @@ construct_runtime!(
 		Observers: pallet_membership::<Instance1>::{Pallet, Call, Storage, Event<T>, Config<T>} = 18,
 		Teerex: pallet_teerex = 19,
 		Sidechain: pallet_sidechain = 20,
+		Board: pallet_ajuna_board = 21,
 	}
 );
 
