@@ -20,11 +20,7 @@ use serde::{Deserialize, Serialize};
 use sp_core::{sr25519, Pair, Public};
 use sp_runtime::traits::IdentifyAccount;
 
-#[cfg(feature = "solo")]
-pub mod solo;
-
-#[cfg(feature = "bajun")]
-pub mod bajun;
+pub mod lib;
 
 /// Helper function to generate a crypto pair from seed
 pub fn get_public_from_seed<TPublic: Public>(seed: &str) -> <TPublic::Pair as Pair>::Public {

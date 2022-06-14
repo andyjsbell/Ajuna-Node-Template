@@ -14,8 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#[cfg(feature = "solo")]
-use ajuna_service::{ajuna_solo_runtime as runtime, solo::FullClient};
+use ajuna_service::{ajuna_runtime as runtime, solo::FullClient};
 
 use sc_cli::Result;
 use sc_client_api::BlockBackend;

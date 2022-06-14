@@ -7,7 +7,7 @@ members = [
     "node/cli",
     "node/service",
     "rpc",
-    "runtime/solo",
+    "runtime",
     "pallets/ajuna-matchmaker",
     "pallets/ajuna-gameregistry",
     "pallets/ajuna-connectfour",

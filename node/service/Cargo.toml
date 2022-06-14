@@ -12,9 +12,9 @@ jsonrpc-core = "18.0.0"
 serde        = { version = "1.0.132", features = [ "derive" ] }
 
 # Local
-ajuna-primitives   = { path = "../../primitives" }
-ajuna-rpc          = { path = "../../rpc" }
-ajuna-solo-runtime = { path = "../../runtime/solo", optional = true }
+ajuna-primitives    = { path = "../../primitives" }
+ajuna-rpc           = { path = "../../rpc" }
+ajuna-runtime       = { path = "../../runtime" }
 
 # Substrate
 frame-benchmarking  = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
@@ -49,28 +49,9 @@ sp-transaction-pool            = { git = "https://github.com/paritytech/substrat
 substrate-frame-rpc-system     = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20", optional = true }
 substrate-prometheus-endpoint  = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20", optional = true }
 
-# Polkadot
-polkadot-service = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.20", optional = true }
-xcm              = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.20", optional = true, default-features = false }
-
-# Cumulus
-cumulus-client-cli                      = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-client-consensus-aura           = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-client-consensus-common         = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-client-network                  = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-client-service                  = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-primitives-core                 = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-primitives-parachain-inherent   = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-relay-chain-inprocess-interface = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-relay-chain-interface           = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-cumulus-relay-chain-rpc-interface       = { git = "https://github.com/paritytech/cumulus", branch = "polkadot-v0.9.20", optional = true }
-
 [features]
-default = [ "solo" ]
-solo = [ "ajuna-solo-runtime" ]
-
 runtime-benchmarks = [
-    "ajuna-solo-runtime/runtime-benchmarks",
+    "ajuna-runtime/runtime-benchmarks",
 ]
 
-skip-ias-check = [ "ajuna-solo-runtime/skip-ias-check" ]
+skip-ias-check = [ "ajuna-runtime/skip-ias-check" ]

@@ -16,7 +16,7 @@
 
 use crate::chain_spec::{chain_spec_properties, get_well_known_accounts};
 use ajuna_primitives::Balance;
-use ajuna_solo_runtime::{
+use ajuna_runtime::{
 	currency::AJUNS, AssetsConfig, AuraConfig, BalancesConfig, CouncilConfig, GenesisConfig,
 	GrandpaConfig, ObserversConfig, SudoConfig, SystemConfig, TeerexConfig, VestingConfig,
 	WASM_BINARY,

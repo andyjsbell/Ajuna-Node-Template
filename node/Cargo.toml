@@ -6,15 +6,7 @@ name       = "ajuna-node"
 repository = "https://github.com/ajuna-network/Ajuna"
 version    = "0.1.0"
 
-[[bin]]
-name              = "ajuna-solo"
-path              = "src/solo.rs"
-required-features = [ "solo" ]
-
 [dependencies]
 ajuna-cli     = { path = "cli" }
 ajuna-service = { path = "service" }
 
-[features]
-default = [ "solo" ]
-solo  = [ "ajuna-cli/solo", "ajuna-service/solo" ]

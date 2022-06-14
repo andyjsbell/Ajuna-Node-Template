@@ -30,18 +30,8 @@ pub struct Cli {
 	#[clap(subcommand)]
 	pub subcommand: Option<Subcommand>,
 
-	#[cfg(feature = "solo")]
 	#[clap(flatten)]
 	pub run_solo: sc_cli::RunCmd,
-
-	#[cfg(feature = "bajun")]
-	#[clap(flatten)]
-	pub run_para: cumulus_client_cli::RunCmd,
-
-	/// Relay chain arguments
-	#[cfg(feature = "bajun")]
-	#[clap(raw = true)]
-	pub relay_chain_args: Vec<String>,
 }
 
 #[derive(Debug, clap::Subcommand)]
@@ -75,13 +65,8 @@ pub enum Subcommand {
 	/// Import blocks.
 	ImportBlocks(sc_cli::ImportBlocksCmd),
 
-	/// Remove the whole solo chain data.
-	#[cfg(feature = "solo")]
-	PurgeChainSolo(sc_cli::PurgeChainCmd),
-
-	/// Remove the whole parachain chain data.
-	#[cfg(feature = "bajun")]
-	PurgeChainPara(cumulus_client_cli::PurgeChainCmd),
+	/// Remove the chain data.
+	PurgeChain(sc_cli::PurgeChainCmd),
 
 	/// Revert the chain to a previous state.
 	Revert(sc_cli::RevertCmd),
