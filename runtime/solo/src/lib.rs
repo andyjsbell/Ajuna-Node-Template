@@ -76,7 +76,6 @@ pub use pallet_balances::Call as BalancesCall;
 pub use pallet_sidechain;
 pub use pallet_teerex;
 pub use pallet_timestamp::Call as TimestampCall;
-use pallet_ajuna_board::guessing::MockGame;
 
 impl_opaque_keys! {
 	pub struct SessionKeys {
@@ -500,9 +499,9 @@ parameter_types! {
 impl pallet_ajuna_board::Config for Runtime {
 	type Event = Event;
 	type BoardId = GameId;
-	type PlayersTurn = pallet_ajuna_board::guessing::Guess;
-	type GameState = pallet_ajuna_board::guessing::GameState<AccountId>;
-	type Game = MockGame<AccountId>;
+	type PlayersTurn = pallet_ajuna_board::dot4gravity::Turn;
+	type GameState = pallet_ajuna_board::dot4gravity::GameState<AccountId>;
+	type Game = pallet_ajuna_board::dot4gravity::Game<AccountId>;
 	type MaxNumberOfPlayers = MaxNumberOfPlayers;
 }
 
